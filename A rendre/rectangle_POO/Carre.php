@@ -1,49 +1,30 @@
 <?php
+//Un Carre est une Figure
+//Un Carre herite d'une Figure
+//Carre est une classe Fille de Figure
+//Carre est une specialisation de Figure
+  class Carre extends Figure{
 
-//Un Rectangle est une Figure
-//Un rectangle herite d'une Figure
-//Rectangle est une classe Fille de Figure
-
-  class Rectangle extends Figure{
-     
-           //Attributs Instances
-            private $largeur; 
-          //Attributs classe ou Attributs static
 
             //Constructeur => methode instance concrete
-              public  function __construct($longueur=null,$largeur=null){
+              public  function __construct($longueur=null){
                         if($longueur!=null){
                           $this->longueur=$longueur;
                         }
-                        if($largeur!=null){
-                          $this->largeur=$largeur;
-                        }
+                       
               }
                
-              //Getters  methodes instances concretes
-           
-              public function getLargeur(){
-                return $this->largeur;
-             }
-             //setters  methodes instances concretes
-              public function setLargeur($largeur){
-                 $this->largeur=$largeur;
-              }
-             
-              //Getters Setters  methodes static concretes
-            
-
               //metiers=>UC
               //Redefinition
                 public function demiPerimetre(){
-                     return $this->longueur + $this->largeur;
+                     return $this->longueur *2;
                 }
-              
+               
                 public function surface(){
-                  return $this->longueur * $this->largeur;
+                  return $this->longueur * $this->longueur;
                 }
                 public function diagonale(){
-                  return sqrt(pow($this->longueur,2)+pow($this->largeur,2));
+                  return sqrt(pow($this->longueur,2)+pow($this->longueur,2));
                 }
               
   }
