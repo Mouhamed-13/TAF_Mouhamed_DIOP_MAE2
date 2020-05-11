@@ -7,6 +7,8 @@ require_once("Rectangle.php");
 require_once("Carre.php");
 //Acces BD
 require_once("CarreManager.php");
+require_once("RectangleManager.php");
+
 
 $errors=[];
 $resultat=[];
@@ -33,6 +35,8 @@ if(!isset($_SESSION['id'])){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="rectangle.js" type="text/javascript"></script>
+    <script src="carre.js" type="text/javascript"></script>
   </head>
   <body>
 
@@ -56,6 +60,14 @@ if(!isset($_SESSION['id'])){
                  
               </div>
           </nav>
+          <script>
+                function verif(){
+                if(confirm("voulez vous supprimer ce rectangle"))
+                    alert("suppression effectuer");
+                   
+                else return false;
+                }
+                </script>
 
           <?php
           //Routage

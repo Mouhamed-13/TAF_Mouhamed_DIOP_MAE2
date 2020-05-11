@@ -9,25 +9,32 @@ class RectangleManager extends MysqlBd{
     }
 
     public function create($data){
-        $sql="insert into rectangle......";
-        
+        $sql="insert into rectangle (longueur,largeur) values (".$data->getLongueur().",".$data->getLargeur().")";
+        //die($sql);
+        return $this->ExecuteUpdate($sql)!=0;
     }
 
-    public function update($data){
-        $sql="update  rectangle    ......";
+    public function update($id){	
+        $sql= 'UPDATE rectangle SET
+        longueur= "'.$this->longueur.'", 
+        largeur = "'.$this->largeur.'"
+        WHERE id = '.$id;
+        return $this->ExecuteUpdate($sql)!=0;
         
     }
     public function delete($id){
-        $sql="delete rectangle    ......";
+   		
+        $sql = 'DELETE FROM rectagle WHERE id= '.$id;
+        return $this->ExecuteUpdate($sql)!=0;
     }
 
     public function findAll(){
-       $sql="select * from rectangle";
-       $this->ExecuteSelect($sql); 
-    }
-    public function findById($id){
-        $sql="select * from rectangle where id =$id"; 
-    }
+        $sql="select * from rectangle"; 
+        return $this->ExecuteSelect($sql);
+     }
+     public function findById($id){
+         $sql="select * from rectangle where id =$id"; 
+     }
 
 
 }

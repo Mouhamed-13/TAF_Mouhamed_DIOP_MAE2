@@ -7,7 +7,7 @@ class CarreManager extends MysqlBd{
   }
     
     public function create($data){
-        $sql="insert into carre (longeur) values (".$data->getLongueur().")";
+        $sql="insert into carre (longueur) values (".$data->getLongueur().")";
         //die($sql);
         return $this->ExecuteUpdate($sql)!=0;
     }

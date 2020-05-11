@@ -34,10 +34,15 @@
            attribut=> monattribut
 
  -->
+                
  <?php
 
 
    ///session_destroy();
+
+   $entityManager=new RectangleManager();
+    
+   
 
     if( isset($_POST['btn_submit'])){
 
@@ -48,25 +53,15 @@
         $longueur=$_POST['longueur'];
         $largeur=$_POST['largeur'];
 
-          $validator->is_empty($longueur,'longueur');
-          $validator->is_empty($largeur,'largeur');
          
-         if($validator->is_valid()){
             $validator->compare($longueur,$largeur,'longueur','largeur');
             if($validator->is_valid()){
-                    /* 
-                     $rectangle=new Rectangle();
-                     $rectangle->setLongueur($longueur);
-                     $rectangle->setLargeur($largeur);
-                     */   
-                      $rectangle=new Rectangle($longueur,$largeur);
-                      $id= $_SESSION['id'];
-                      $id++;
-                      $_SESSION["Resultat".$id]=$rectangle;
-                    
-                      $_SESSION['id']=$id;
+                      $rectangle=new Rectangle();
+                      $rectangle->setLongueur($longueur);
+                      $rectangle->setLargeur($largeur);
+                      $entityManager->create($rectangle);
 
-            }
+            
          }
          $errors=$validator->getErrors();
 
@@ -100,7 +95,7 @@
         <?php
         }
         ?>
-             <form method="post" action="">
+             <form name="form1" method="post" action="">
                  <div class="form-group row">
                      <label for="inputName" class="col-sm-1-12 col-form-label">Longueur</label>
                      <div class="col-6 ml-2">
@@ -146,7 +141,9 @@
              </form>
          </div>
 <?php
-      if( isset($_POST['btn_submit']) && $_POST['btn_submit']==="calcul" && count($errors)===0) {
+      $rectangles=$entityManager->findAll();
+  
+      if(count($rectangles)>0 ) {
 ?>
         <table class="table container table-bordered">
             <thead>
@@ -155,28 +152,84 @@
                     <th>Preimetre</th>
                     <th>Surface</th>
                     <th>Diagonale</th>
+                    <th>ID</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
             <?php
-                foreach ($_SESSION as $key=> $rectangle) {
-                    if($key!=="id")  {
+                foreach ($rectangles as $key=> $rectangle) {
+                    
             ?>
                 <tr>
                     <td scope="row"><?=$rectangle->demiPerimetre()?></td>
                     <td><?=$rectangle->perimetre()?></td>
                     <td><?=$rectangle->surface()?></td>
                     <td><?=$rectangle->diagonale()?></td>
+                    <td><?=$rectangle->getId()?></td>
+                    <td>
+                    <form name="form2" method="post" action=" ">
+                    <a name="modifie" id="" class="btn btn-success" href="" role="button">Edit</a>
+                    <a name="supprime" id="" class="btn btn-danger" href="" role="button" onclick="verif()">Delete</a>
+                    </form>
+                    </td>
                 </tr>
 
                 <?php
+                
                 }
+            
+                
+                
+                /*//Supprimer les messages
+                $suppressionMessage = is_int($_GET['idMsg']) ? $_GET['idMsg'] : false;
+                if($suppressionMessage){
+                mysql_query('DELETE FROM livreor WHERE id=' . $suppressionMessage);
                 }
-                ?>
+                
+                $reponse = mysql_query("SELECT id, pseudo, message FROM livreor");
+                
+                
+                while ($donnees = mysql_fetch_array($reponse))
+                {
+                        echo '<div id="liste"><strong><font color="dodgerblue"><a href="livre_or_a.php?idMsg=' . $donnees['id'] . '"><img src="../images/supprimer.png" /></a> ' . $donnees['pseudo'] . '</font></strong> a écrit :</div><div id="liste_a_puce">' . $donnees['message'] . '</div><br>';
+                }*/
 
+                ?>
+                
+                
             </tbody>
         </table>
 
     <?php
        }
+       if (isset($_POST['modifie'])){
+ 
+                if($longueur=='' || $largeur=='')
+        {
+
+        echo '<body onLoad="alert(\'fair une recherch avant la modification ou verifiez les champs obligatoire...\')">';
+                                echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+        }
+        else
+        {
+        $rqt="update user_basalte set LAST_NAME='$nom',LOGIN='$LOGIN',WKG_NAME='$WKG',BE_NAME='$BE' where LAST_NAME='$rech'";
+        mysql_query($rqt);
+        echo '<body onLoad="alert(\'Modification effectuée...\')">';
+        echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+        mysql_close();
+        }
+    }
+       if(isset($_POST['supprime']))       
+        {
+
+ $rqt="delete  FROM user_basalte  where id ='8'";
+
+mysql_query($rqt);
+ echo '<body onLoad="alert(\'Suppression effectuée...\')">';
+echo '<meta http-equiv="refresh" content="0;URL=index.php">';
+mysql_close();
+ }
+
+
  ?>

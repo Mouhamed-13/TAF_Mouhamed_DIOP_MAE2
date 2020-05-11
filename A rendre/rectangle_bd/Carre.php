@@ -17,7 +17,7 @@
               }
              //Une ligne d'une Table BD et de l'encapsuler dans un Objet(Carre)
               public function hydrate($row){
-                       $this->longueur=$row['longeur'];
+                       $this->longueur=$row['longueur'];
                        $this->id=$row['id'];
               }
                

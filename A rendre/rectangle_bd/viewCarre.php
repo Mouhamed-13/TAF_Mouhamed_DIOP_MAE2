@@ -11,14 +11,13 @@
 
         $longueur=$_POST['longueur'];
       
-          $validator->is_empty($longueur,'longueur');
-         if($validator->is_valid()){
+         
                    $validator->is_positif( $longueur,'longueur');
                    if($validator->is_valid()){
                       $carre=new Carre();
                       $carre->setLongueur($longueur);
                       $entityManager->create($carre);
-                   }
+                   
            
          }
          $errors=$validator->getErrors();
