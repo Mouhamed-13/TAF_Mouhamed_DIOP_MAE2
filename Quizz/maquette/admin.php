@@ -7,12 +7,12 @@
                 <div class="border rounded-0" style="height: 383px;background-color: #fefefe;width: 374px;margin: 21px 25px 0px 7px;">
                     <div style="background-color: rgba(229,246,255,0);height: 113px;padding: 16px;background: linear-gradient(180deg, #F4F7F8, #51BFD0);">
                         <div class="border rounded-circle border-dark" style="height: 89px;width: 89px;margin: -7px 0px 0px 0px;"></div>
-                        <div class="border rounded-circle border-primary" style="height: 68px;width: 68px;margin: -79px 0px 0px 10px;background-color: #ffffff;"><img src="assets/img/avatar1.png" style="width: 78px;height: 76px;margin: -6px 0px 0px -7px;"></div>
+                        <div class="border rounded-circle border-primary" style="height: 68px;width: 68px;margin: -79px 0px 0px 10px;background-color: #ffffff;"><img src="img/avatar1.png" style="width: 78px;height: 76px;margin: -6px 0px 0px -7px;"></div>
                     </div>
-                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Liste Questions</a><img src="assets/img/ic-liste.png" style="width: 41px;height: 41px;"></div>
-                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Créer Admin</a><img src="assets/img/ic-ajout-active.png" style="width: 41px;height: 41px;"></div>
-                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Liste Joueurs</a><img src="assets/img/ic-liste.png" style="width: 41px;height: 41px;"></div>
-                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Créer Questions</a><img src="assets/img/ic-ajout.png" style="width: 41px;height: 41px;"></div>
+                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Liste Questions</a><img src="img/ic-liste.png" style="width: 41px;height: 41px;"></div>
+                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Créer Admin</a><img src="img/ic-ajout-active.png" style="width: 41px;height: 41px;"></div>
+                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Liste Joueurs</a><img src="img/ic-liste.png" style="width: 41px;height: 41px;"></div>
+                    <div class="text-truncate border rounded-0 d-inline-flex" style="width: 373px;padding: 9px;height: 67px;"><a href="#" style="font-size: 25px;width: 310px;color: rgb(129,129,129);">Créer Questions</a><img src="img/ic-ajout.png" style="width: 41px;height: 41px;"></div>
                 </div>
                 <div class="border rounded-0 d-inline-flex" style="background-color: #ffffff;height: 456px;width: 514px;margin: -11px 0px 0px 0px;">
                     <div class="border-dark" style="background-color: #ffffff;height: 396px;width: 339px;margin: -1px 0px 0px 0px;">
@@ -31,7 +31,7 @@
                         class="btn btn-primary" type="button" style="height: 27px;padding: 0px;margin: -14px 0px 0px 85px;width: 115px;background-color: rgb(58,221,214);">Créer compte</button>
                 </div>
                 <div class="border-dark" style="background-color: #ffffff;height: 332px;width: 108px;margin: 0px 0px 0px 0px;">
-                    <div class="border rounded-circle border-primary" style="width: 140px;height: 140px;margin: 2px 0px 0px 26px;background-color: #ffffff;"><img class="rounded-circle border-warning" src="assets/img/avatar1.png" style="width: 155px;height: 148px;margin: -3px 0px 0px -10px;background-color: rgba(255,255,255,0);"></div>
+                    <div class="border rounded-circle border-primary" style="width: 140px;height: 140px;margin: 2px 0px 0px 26px;background-color: #ffffff;"><img class="rounded-circle border-warning" src="img/avatar1.png" style="width: 155px;height: 148px;margin: -3px 0px 0px -10px;background-color: rgba(255,255,255,0);"></div>
                     <p class="text-center" style="margin: 0px -76px 0px 3px;font-size: 17px;">Avatar Admin</p>
                 </div>
             </div>

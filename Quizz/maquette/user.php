@@ -19,7 +19,7 @@
                     class="btn btn-primary" type="button" style="height: 35px;padding: 0px;margin: -14px 0px 0px 200px;width: 134px;background-color: rgb(58,221,214);font-size: 21px;">Créer compte</button>
             </div>
             <div class="border-dark" style="background-color: #ffffff;height: 332px;width: 396px;margin: 0px 0px 0px 0px;">
-                <div class="border rounded-circle border-primary" style="width: 250px;height: 250px;margin: 47px 2px 4px -55px;background-color: #ffffff;"><img class="rounded-circle border-success" src="assets/img/avatar1.png" style="width: 285px;height: 279px;margin: -17px 0px 0px -21px;"></div>
+                <div class="border rounded-circle border-primary" style="width: 250px;height: 250px;margin: 47px 2px 4px -55px;background-color: #ffffff;"><img class="rounded-circle border-success" src="img/avatar1.png" style="width: 285px;height: 279px;margin: -17px 0px 0px -21px;"></div>
                 <p class="text-center" style="margin: 0px 30px 0px -8px;font-size: 23px;width: 172px;color: rgb(0,0,0);">Avatar du joueur</p>
             </div>
         </div>
