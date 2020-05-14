@@ -3,6 +3,12 @@
 
    $entityManager=new CarreManager();
 
+   if (isset($_GET['delCar'])) {
+    $id = $_GET['delCar'];
+    $entityManager->delete($id); 
+    header('location: index.php?url=carre');
+}
+
     if( isset($_POST['btn_submit'])){
 
         if($_POST['btn_submit']==="calcul"){
@@ -15,6 +21,7 @@
                    $validator->is_positif( $longueur,'longueur');
                    if($validator->is_valid()){
                       $carre=new Carre();
+                      $id=$carre->getId();
                       $carre->setLongueur($longueur);
                       $entityManager->create($carre);
                    
@@ -71,6 +78,30 @@
          </div>
 <?php
     $carres=$entityManager->findAll();
+
+    if(isset($_GET['editCar'])){
+        foreach ($carres as $key=> $carre) {
+      if($_GET['editCar'] === $carres[$key]->getId() ){ ?>
+
+            <form action="" method="post">
+            <input type="hidden" name="typeCar" value="<?php echo $id; ?>" />
+            
+            <input type="text" name="longueur" value="<?= $carres[$key]->getLongueur() ?>" />
+            <input type="submit" class="btn btn-success" value="valider" />
+            <a href="index.php?url=carre" class=btn btn-danger>Annuler</a>
+         
+            </form> 
+      <?php }
+      }
+    }
+
+    if(isset($_POST['typeCar'])){
+        $id=$carres[$key]->getId();
+        $entityManager->upda($id,$_POST['longueur']);
+
+
+    }
+
   
       if(count($carres)>0 ) {
 ?>
@@ -95,8 +126,8 @@
                     <td><?=$carre->surface()?></td>
                     <td><?=$carre->diagonale()?></td>
                     <td>
-                    <a name="" id="" class="btn btn-success" href="#" role="button">Edit</a>
-                    <a name="" id="" class="btn btn-danger" href="#" role="button">Delete</a>
+                    <a name="modifi" id="" class="btn btn-success" href="index.php?editCar=<?php echo $carres[$key]->getId(); ?>" role="button">Edit</a>
+                    <a name="supprim" id="" class="btn btn-danger" href="index.php?delCar=<?php echo $carres[$key]->getId(); ?>" role="button" onclick="verif()">Delete</a>
                     </td>
                 </tr>
 

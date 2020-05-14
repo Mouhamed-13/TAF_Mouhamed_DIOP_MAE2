@@ -3,17 +3,20 @@
 require_once("Validator.php");
 //Model=> Diagramme de Classe
 require_once("Figure.php");
-require_once("Rectangle.php");
-require_once("Carre.php");
+require("Rectangle.php");
+require("Carre.php");
 //Acces BD
-require_once("CarreManager.php");
-require_once("RectangleManager.php");
+require("CarreManager.php");
+require("RectangleManager.php");
+
+
 
 
 $errors=[];
 $resultat=[];
 $longueur="";
 $largeur="";
+$id="";
 //Ouvrir session_start()
 session_start();
 if(!isset($_SESSION['id'])){
@@ -35,11 +38,8 @@ if(!isset($_SESSION['id'])){
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="rectangle.js" type="text/javascript"></script>
-    <script src="carre.js" type="text/javascript"></script>
   </head>
   <body>
-
 
           <div class="container mt-1">
 
@@ -75,7 +75,7 @@ if(!isset($_SESSION['id'])){
                 $url=$_GET['url'];
                 if($url==="rectangle"){
                     require_once("./viewRectangle.php")  ; 
-                }else{
+                }elseif($url==="carre"){
                     require_once("./viewCarre.php")  ;
                 }
 

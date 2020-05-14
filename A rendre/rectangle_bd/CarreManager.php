@@ -12,11 +12,13 @@ class CarreManager extends MysqlBd{
         return $this->ExecuteUpdate($sql)!=0;
     }
 
-    public function update($data){
-        
+    public function upda($id,$longueur,$largeur=null){
+        $sql="UPDATE `rectangle` SET `longueur` = '$longueur' WHERE `rectangle`.`id` = $id;";
+        return $this->Update($sql)!=0;
     }
     public function delete($id){
-        
+        $sql="delete from carre WHERE id=$id";
+        return $this->ExecuteUpdate($sql)!=0;
     }
 
     public function findAll(){
@@ -25,6 +27,7 @@ class CarreManager extends MysqlBd{
     }
     public function findById($id){
         $sql="select * from carre where id =$id"; 
+        return  $this->ExecuteSelect($sql);
     }
 
 
